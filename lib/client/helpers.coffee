@@ -1,18 +1,22 @@
-Template.registerHelper 'Favorites', (collection) ->
-	if typeof window['Favorites'] != 'undefined'
-		Favorites = []
-		favorites = window['Favorites'].find({owner: Meteor.userId()},{sort: {createdAt: -1}}).fetch()
+Template.registerHelper 'CommentsByDoc', (_id) ->
+	if typeof window['Comments'] != 'undefined'
+		Comments.find({doc:_id},{sort: {createdAt: -1}}).fetch()
+
+Template.registerHelper 'CommentsByUser', (_id) ->
+	if typeof window['Comments'] != 'undefined'
+		Comments.find({owner:_id},{sort: {createdAt: -1}}).fetch()
+
+Template.registerHelper 'CommentsByCollection', (collection) ->
+	if typeof window['Comments'] != 'undefined'
+		Comments = []
+		comments = window['Comments'].find({owner: Meteor.userId()},{sort: {createdAt: -1}}).fetch()
 		collection = window[collection]
 
-		_.each favorites, (favorite)->
-			Favorites.push(collection.findOne({_id:favorite.doc})) if collection.findOne({_id:favorite.doc})
-		Favorites
+		_.each comments, (favorite)->
+			Comments.push(collection.findOne({_id:favorite.doc})) if collection.findOne({_id:favorite.doc})
+		Comments
 
-Template.registerHelper 'favoriteCount', (_id)->
-	if typeof window['Favorites'] != 'undefined'
-		Favorites.find({doc:_id}).fetch().length
 
-Template.registerHelper 'orderByFavorites', (docs)->
-	if typeof window['Favorites'] != 'undefined' and typeof docs != 'undefined'
-		_.sortBy docs, (doc) ->
-  			-1 * Favorites.find({doc:doc._id}).fetch().length
+Template.registerHelper 'commentsCount', (_id)->
+	if typeof window['Comments'] != 'undefined'
+		Comments.find({doc:_id}).fetch().length

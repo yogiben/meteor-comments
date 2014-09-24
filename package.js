@@ -1,7 +1,7 @@
 Package.describe({
-  summary: "Adds favoriting/liking functionality",
+  summary: "Adds comments to your collection(s) of choice",
   version: "0.0.2",
-  git: "http://github.com/yogiben/meteor-favorites.git"
+  git: "http://github.com/yogiben/meteor-comments.git"
 });
 
 both = ['client','server']
@@ -15,7 +15,8 @@ Package.onUse(function(api) {
   		'less',
       'templating',
 
-	    'aldeed:collection2@0.4.6'
+      'aldeed:collection2@0.4.6',
+	    'aldeed:autoform@0.17.1'
 
   	],
   	both);
@@ -31,7 +32,8 @@ Package.onUse(function(api) {
   	[
   		'lib/client/templates.html',
       'lib/client/templates.coffee',
-  		'lib/client/helpers.coffee'
+      'lib/client/helpers.coffee',
+  		'lib/client/autoform.coffee'
   	],
   	'client')
 

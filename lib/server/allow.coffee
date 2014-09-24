@@ -1,5 +1,3 @@
-Favorites.allow
+Comments.allow
 	insert: (userId, doc) ->
-		doc.owner == userId
-	remove: (userId, doc) ->
 		doc.owner == userId

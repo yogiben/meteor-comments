@@ -1,15 +1,46 @@
-<template name="favoriteButton">
-	{{#if isFavorite _id}}
-	{{> favoriteButtonFavorited _id=_id}}
-	{{else}}
-	{{> favoriteButtonNotFavorited}}
-	{{/if}}
+<template name="commentForm">
+    {{#autoForm collection="Comments" id="commentForm" type="insert" commentDocId=_id}}
+    <fieldset>
+      <legend>Comment</legend>
+      {{> afQuickField name='content' id='content' rows=2}}
+    </fieldset>
+    <button type="submit" doc="{{_id}}" class="btn btn-primary">Insert</button>
+  {{/autoForm}}
+  <!-- {{> quickForm collection="Comments" id="commentForm" type="insert"}} -->
 </template>
 
-<template name="favoriteButtonFavorited">
-	<a class="btn btn-primary favorite-button" doc="{{_id}}"><i class="fa fa-star"></i> Favorite</a>
+<template name="comments">
+    {{#if CommentsByDoc _id}}
+        {{#each CommentsByDoc _id}}
+	        {{> comment}}
+        {{/each}}
+    {{else}}
+        {{> noComments}}
+    {{/if}}
 </template>
 
-<template name="favoriteButtonNotFavorited">
-	<a class="btn btn-default favorite-button" doc="{{_id}}"><i class="fa fa-star-o"></i> Favorite</a>
+<template name="comment">
+	<div class="media">
+		<a class="pull-left" href="#">
+			<img class="media-object" src="#" alt="Image">
+		</a>
+		<div class="media-body">
+			<h4 class="media-heading">USERNAME</h4>
+			<p>{{content}}</p>
+		</div>
+	</div>
+</template>
+
+<template name="hasComments">
+    {{#each comments}}
+        <div style="padding:20px">
+	        <div class="tip left">
+                {{content}}
+            </div>
+        </div>
+    {{/each}}
+</template>
+
+<template name="noComments">
+    <h3>There are no comments yet</h3>
 </template>
