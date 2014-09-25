@@ -20,3 +20,6 @@ Template.registerHelper 'CommentsByCollection', (collection) ->
 Template.registerHelper 'commentsCount', (_id)->
 	if typeof window['Comments'] != 'undefined'
 		Comments.find({doc:_id}).fetch().length
+
+Template.registerHelper 'commentingOn', (_id)->
+	Session.equals 'commentingOn', _id

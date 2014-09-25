@@ -17,6 +17,6 @@ Schemas.Comments = new SimpleSchema
 
 	content:
 		type: String
-		label: 'Content'
+		label: 'Comment'
 
 Comments.attachSchema(Schemas.Comments)

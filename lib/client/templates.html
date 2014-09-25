@@ -1,32 +1,42 @@
 <template name="commentForm">
     {{#autoForm collection="Comments" id="commentForm" type="insert" commentDocId=_id}}
-    <fieldset>
-      <legend>Comment</legend>
       {{> afQuickField name='content' id='content' rows=2}}
-    </fieldset>
-    <button type="submit" doc="{{_id}}" class="btn btn-primary">Insert</button>
+    <button type="submit" doc="{{_id}}" class="btn btn-primary btn-sm">Comment</button>
+    {{#if cancelButton}}
+    <a class="btn-cancel-comment">Cancel</a>
+    {{/if}}
   {{/autoForm}}
-  <!-- {{> quickForm collection="Comments" id="commentForm" type="insert"}} -->
 </template>
 
-<template name="comments">
-    {{#if CommentsByDoc _id}}
-        {{#each CommentsByDoc _id}}
-	        {{> comment}}
-        {{/each}}
+<template name="commentFormToggle">
+    {{#if commentingOn _id}}
+        <hr/>
+        {{> commentForm _id=_id cancelButton=true}}
     {{else}}
-        {{> noComments}}
+        <button class="btn btn-primary btn-sm btn-comment" doc="{{_id}}">Comment</button>
     {{/if}}
 </template>
 
+<template name="comments">
+    <div class="comments">
+        {{#if CommentsByDoc _id}}
+            {{#each CommentsByDoc _id}}
+                    {{> comment}}
+            {{/each}}
+        {{else}}
+            {{> noComments}}
+        {{/if}}
+    </div>
+</template>
+
 <template name="comment">
-	<div class="media">
+	<div class="media comment">
 		<a class="pull-left" href="#">
-			<img class="media-object" src="#" alt="Image">
+			{{> profileThumb _id=owner}}
 		</a>
 		<div class="media-body">
-			<h4 class="media-heading">USERNAME</h4>
-			<p>{{content}}</p>
+            <p>{{content}}</p>
+			<small class="media-heading">USERNAME</small>
 		</div>
 	</div>
 </template>
@@ -42,5 +52,4 @@
 </template>
 
 <template name="noComments">
-    <h3>There are no comments yet</h3>
 </template>

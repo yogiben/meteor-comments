@@ -47,9 +47,3 @@ Package.onUse(function(api) {
 
 
 });
-
-Package.onTest(function(api) {
-  api.use('tinytest');
-  api.use('yogiben:favorites');
-  api.addFiles('yogiben:favorites-tests.js');
-});
