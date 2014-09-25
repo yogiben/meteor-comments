@@ -17,7 +17,7 @@ Template.registerHelper 'CommentsByCollection', (collection) ->
 		Comments
 
 
-Template.registerHelper 'commentsCount', (_id)->
+Template.registerHelper 'commentCount', (_id)->
 	if typeof window['Comments'] != 'undefined'
 		Comments.find({doc:_id}).fetch().length
 

@@ -6,3 +6,8 @@ Template.commentFormToggle.events
 
 Template.commentFormToggle.destroyed = () ->
 	Session.set 'commentingOn', null
+
+AutoForm.hooks commentForm:
+
+	onSuccess: (operation, result, template) ->
+		Session.set 'commentingOn', null

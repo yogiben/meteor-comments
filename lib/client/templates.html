@@ -20,6 +20,7 @@
 <template name="comments">
     <div class="comments">
         {{#if CommentsByDoc _id}}
+            <hr/>
             {{#each CommentsByDoc _id}}
                     {{> comment}}
             {{/each}}
