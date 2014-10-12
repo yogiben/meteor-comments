@@ -1,6 +1,6 @@
 Package.describe({
   summary: "Adds comments to your collection(s) of choice",
-  version: "0.0.3",
+  version: "0.0.5",
   git: "http://github.com/yogiben/meteor-comments.git"
 });
 
@@ -15,8 +15,8 @@ Package.onUse(function(api) {
   		'less',
       'templating',
 
-      'aldeed:collection2@0.4.6',
-	    'aldeed:autoform@0.17.1'
+	    'aldeed:autoform@3.2.0',
+      'yogiben:user-helpers@0.0.1'
 
   	],
   	both);

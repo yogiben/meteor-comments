@@ -2,39 +2,23 @@
   "dependencies": [
     [
       "aldeed:autoform",
-      "0.17.1"
-    ],
-    [
-      "aldeed:collection2",
-      "0.4.6"
+      "3.2.0"
     ],
     [
       "aldeed:simple-schema",
-      "0.7.0"
-    ],
-    [
-      "application-configuration",
-      "1.0.2"
+      "1.0.3"
     ],
     [
       "base64",
       "1.0.0"
     ],
     [
-      "binary-heap",
-      "1.0.0"
-    ],
-    [
       "blaze",
-      "2.0.0"
-    ],
-    [
-      "callback-hook",
-      "1.0.0"
+      "2.0.1"
     ],
     [
       "check",
-      "1.0.0"
+      "1.0.1"
     ],
     [
       "coffeescript",
@@ -42,26 +26,18 @@
     ],
     [
       "ddp",
-      "1.0.8"
+      "1.0.9"
     ],
     [
       "deps",
-      "1.0.3"
+      "1.0.4"
     ],
     [
       "ejson",
-      "1.0.2"
-    ],
-    [
-      "follower-livedata",
-      "1.0.1"
+      "1.0.3"
     ],
     [
       "geojson-utils",
-      "1.0.0"
-    ],
-    [
-      "handlebars",
       "1.0.0"
     ],
     [
@@ -82,11 +58,11 @@
     ],
     [
       "less",
-      "1.0.8"
+      "1.0.9"
     ],
     [
       "livedata",
-      "1.0.9"
+      "1.0.10"
     ],
     [
       "logging",
@@ -94,19 +70,11 @@
     ],
     [
       "meteor",
-      "1.1.0"
+      "1.1.1"
     ],
     [
       "minimongo",
       "1.0.3"
-    ],
-    [
-      "mongo",
-      "1.0.5"
-    ],
-    [
-      "mongo-livedata",
-      "1.0.4"
     ],
     [
       "mrt:moment",
@@ -126,7 +94,7 @@
     ],
     [
       "reactive-var",
-      "1.0.1"
+      "1.0.2"
     ],
     [
       "retry",
@@ -134,7 +102,7 @@
     ],
     [
       "templating",
-      "1.0.6"
+      "1.0.7"
     ],
     [
       "tracker",
@@ -142,14 +110,18 @@
     ],
     [
       "ui",
-      "1.0.2"
+      "1.0.3"
     ],
     [
       "underscore",
       "1.0.0"
+    ],
+    [
+      "yogiben:user-helpers",
+      "0.0.6"
     ]
   ],
   "pluginDependencies": [],
-  "toolVersion": "meteor-tool@1.0.31",
+  "toolVersion": "meteor-tool@1.0.33",
   "format": "1.0"
 }
