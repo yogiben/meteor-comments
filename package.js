@@ -1,6 +1,6 @@
 Package.describe({
   summary: "Adds comments to your collection(s) of choice",
-  version: "0.0.5",
+  version: "0.0.6",
   git: "http://github.com/yogiben/meteor-comments.git"
 });
 
