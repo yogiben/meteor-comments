@@ -8,6 +8,11 @@ Schemas.Comments = new SimpleSchema
 	owner:
 		type: String
 		regEx: SimpleSchema.RegEx.Id
+		autoform:
+			options: ->
+				_.map Meteor.users.find().fetch(), (user)->
+					label: user.emails[0].address
+					value: user._id
 
 	createdAt: 
 		type: Date
@@ -18,5 +23,6 @@ Schemas.Comments = new SimpleSchema
 	content:
 		type: String
 		label: 'Comment'
+
 
 Comments.attachSchema(Schemas.Comments)
