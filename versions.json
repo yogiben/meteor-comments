@@ -5,16 +5,32 @@
       "4.0.2"
     ],
     [
+      "aldeed:collection2",
+      "2.2.0"
+    ],
+    [
       "aldeed:simple-schema",
       "1.1.0"
+    ],
+    [
+      "application-configuration",
+      "1.0.3"
     ],
     [
       "base64",
       "1.0.1"
     ],
     [
+      "binary-heap",
+      "1.0.1"
+    ],
+    [
       "blaze",
       "2.0.3"
+    ],
+    [
+      "callback-hook",
+      "1.0.1"
     ],
     [
       "check",
@@ -35,6 +51,10 @@
     [
       "ejson",
       "1.0.4"
+    ],
+    [
+      "follower-livedata",
+      "1.0.2"
     ],
     [
       "geojson-utils",
@@ -75,6 +95,14 @@
     [
       "minimongo",
       "1.0.5"
+    ],
+    [
+      "mongo",
+      "1.0.8"
+    ],
+    [
+      "mongo-livedata",
+      "1.0.6"
     ],
     [
       "mrt:moment",

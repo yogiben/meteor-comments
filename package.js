@@ -1,6 +1,6 @@
 Package.describe({
   summary: "Adds comments to your collection(s) of choice",
-  version: "0.0.8",
+  version: "0.0.9",
   git: "http://github.com/yogiben/meteor-comments.git"
 });
 
@@ -43,6 +43,9 @@ Package.onUse(function(api) {
   		'lib/server/publish.coffee'
   	],
   	'server')
+
+   api.imply('aldeed:simple-schema')
+   api.imply('aldeed:collection2')
 
 
 
