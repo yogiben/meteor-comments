@@ -1,6 +1,6 @@
 Package.describe({
   summary: "Adds comments to your collection(s) of choice",
-  version: "0.0.9",
+  version: "0.1.0",
   git: "http://github.com/yogiben/meteor-comments.git"
 });
 
@@ -14,8 +14,9 @@ Package.onUse(function(api) {
   		'coffeescript',
   		'less',
       'templating',
-
-	    'aldeed:autoform@4.0.2',
+	    'aldeed:simple-schema@1.1.0',
+	    'aldeed:collection2@2.2.0',
+	    'aldeed:autoform@4.1.0',
       'yogiben:user-helpers@0.0.1'
 
   	],
