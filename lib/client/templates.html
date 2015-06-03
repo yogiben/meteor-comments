@@ -1,11 +1,11 @@
 <template name="commentForm">
     {{#autoForm collection="Comments" id="commentForm" type="insert" commentDocId=_id}}
-      {{> afQuickField name='content' id='content' rows=2}}
-    <button type="submit" doc="{{_id}}" class="btn btn-primary btn-sm">Comment</button>
-    {{#if cancelButton}}
-    <a class="btn-cancel-comment">Cancel</a>
-    {{/if}}
-  {{/autoForm}}
+        {{> afQuickField name='content' id='content' rows=2}}
+        <button type="submit" doc="{{_id}}" class="btn btn-primary btn-sm">Comment</button>
+        {{#if cancelButton}}
+            <a class="btn-cancel-comment">Cancel</a>
+        {{/if}}
+    {{/autoForm}}
 </template>
 
 <template name="commentFormToggle">
@@ -22,7 +22,7 @@
         {{#if CommentsByDoc _id}}
             <hr/>
             {{#each CommentsByDoc _id}}
-                    {{> comment}}
+                {{> comment}}
             {{/each}}
         {{else}}
             {{> noComments}}
@@ -37,7 +37,7 @@
 		</a>
 		<div class="media-body">
             <p>{{content}}</p>
-			<small class="media-heading">{{niceName}}</small>
+			<small class="media-heading">{{niceName owner}}</small>
 		</div>
 	</div>
 </template>
