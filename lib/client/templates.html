@@ -31,21 +31,21 @@
 </template>
 
 <template name="comment">
-	<div class="media comment">
-		<a class="pull-left" href="#">
-			{{> profileThumb _id=owner}}
-		</a>
-		<div class="media-body">
+    <div class="media comment">
+        <a class="pull-left" href="#">
+            {{> profileThumb _id=owner}}
+        </a>
+        <div class="media-body">
             <p>{{content}}</p>
-			<small class="media-heading">{{niceName owner}}</small>
-		</div>
-	</div>
+            <small class="media-heading">{{niceName owner}}</small>
+        </div>
+    </div>
 </template>
 
 <template name="hasComments">
     {{#each comments}}
         <div style="padding:20px">
-	        <div class="tip left">
+            <div class="tip left">
                 {{content}}
             </div>
         </div>
